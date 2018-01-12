@@ -17,13 +17,13 @@ class SignUp extends React.Component {
   handleSubmit = (event) => {
     console.log(this.props)
     event.preventDefault();
-    this.props.signupUser({user: this.state}, this.props.history)
+    this.props.signupUser(this.state, this.props.history)
   }
 
   render() {
     return (
       <div>
-        <h1>Login</h1>
+        <h1>SignUp</h1>
         <form onSubmit={this.handleSubmit}>
           <input name="username" value={this.state.username} onChange={this.handleChange} /><br/>
           <input name="password" type="password" value={this.state.password} onChange={this.handleChange} /><br/>

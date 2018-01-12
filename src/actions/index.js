@@ -1,10 +1,14 @@
 import { backendUrl, headers } from '../services/Adapter';
 
 export function loginUser(loginData, history) {
+  console.log(loginData);
   return (dispatch) => {
-    return fetch(`${backendUrl}/auth`, {
+    return fetch(`${backendUrl}auth`, {
       method: 'POST',
-      headers: headers,
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
       body: JSON.stringify(loginData)
     })
       .then(resp => resp.json())
@@ -17,10 +21,14 @@ export function loginUser(loginData, history) {
 }
 
 export function signupUser(signupData, history) {
+  console.log(signupData);
   return (dispatch) => {
-    return fetch(`${backendUrl}/users`, {
+    return fetch(`${backendUrl}users`, {
       method: 'POST',
-      headers: headers,
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
       body: JSON.stringify(signupData)
     })
       .then(resp => resp.json())
