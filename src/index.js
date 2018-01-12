@@ -5,6 +5,8 @@ import { createStore, applyMiddleware } from 'redux'; // store for redux state, 
 import { Provider } from 'react-redux'; // lets react have access to redux store
 import thunk from 'redux-thunk'; // middleware for async ajax requests
 
+import rootReducer from './reducers/index'
+
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
@@ -13,7 +15,7 @@ import registerServiceWorker from './registerServiceWorker';
 const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
-  <Provider store={store}> // wrap whole thing in Provider so it has access to store
+  <Provider store={store}>
     <Router>
       <App />
     </Router>
