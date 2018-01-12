@@ -17,7 +17,7 @@ class Login extends React.Component {
   handleSubmit = (event) => {
     console.log(this.props)
     event.preventDefault();
-    this.props.loginUser({user: this.state}, this.props.history)
+    this.props.loginUser(this.state, this.props.history)
   }
 
   render() {
